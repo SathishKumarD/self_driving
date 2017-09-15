@@ -49,4 +49,15 @@ Multiple lane lines can be converted into single lane line by running a linear r
 
 Sudden moving lane lines can be fixed by applying moving average.
 
+### Potential shorcoming
+* Generic region of interest for any image size. For the front facing camera, instead of hard coding region of interest it would be nice if it is calculated based on the image size.
+* Hardcoded thresholds for line slope, intercept. 
+* Better error handling. When we are not able to find any lane withing the threshold level, the application crashes.
+
+### Future prospects
+* instead of linear lines, we can go quadratic to accomodate bending lane lines
+* Thresholds can be computed on the fly via machine learning
+* Computing the region of interest on the fly based on the image dimensions
+* Extracting white color as well to improve the accuracy
+
 
