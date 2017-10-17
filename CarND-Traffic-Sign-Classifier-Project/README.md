@@ -20,6 +20,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./exploratory_analysis/1.png "Visualization"
+[image12]: ./exploratory_analysis/2.png "Visualization2"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/1.jpg "Traffic Sign 1"
@@ -57,6 +58,8 @@ signs data set:
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
 ![alt text][image1]
+![alt text][image12]
+
 
 ###Design and Test a Model Architecture
 
@@ -81,16 +84,21 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x1 Greyscale image   							| 
+| Input         		| 32x32x1 Greyscale image   					| 
 | Convolution     		| 1x1 stride, valid padding, outputs 28x28x6 	|
-| Convolution 	     	| 1x1 stride, valid padding, outputs 24x24x6	|
-| Max Pooling 	     	| 2x2 stride, outputs 12x12x6	|
 | RELU					|												|
-| Convolution	      	| 1x1 stride,  outputs 8x8x16				|
-| Max Pooling  	     	| 2x2 stride, output 4x4x16
+| dropout				|		keep_prob = 0.75						|
+| Convolution 	     	| 1x1 stride, valid padding, outputs 24x24x6	|
+| Max Pooling 	     	| 2x2 stride, outputs 12x12x6					|
+| RELU					|												|
+| Convolution	      	| 1x1 stride,  outputs 8x8x16					|
+| Max Pooling  	     	| 2x2 stride, output 4x4x16						|
 | Fully connected		| output 120   									|
-|						|												|
-|						|												|
+| RELU 					|   											|
+| dropout 				| keep_prob = 0.75								|
+| Fully connected		| output 84   									|
+| RELU 					|   											|
+| Fully connected		| output 43   									|
  
 
 
