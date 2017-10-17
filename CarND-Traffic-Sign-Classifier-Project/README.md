@@ -104,7 +104,12 @@ My final model consisted of the following layers:
 
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+I tried with several batch sizes like 128, 500, 1000. 128 gave the maximum accuracy
+I noticed that 20 epochs gives the best validation accuracy(96 to 97%) without much overfitting (test accuracy was equally higher). To iterate faster, I kept it as 10 epochs as it was able to reach upto 96% accuracy.
+I used adam optimizer and learning rate as 0.001. I tried using 0.0005 ( 25 epochs was not enough to reach above 93% accuracy). I also tried 0.05 ( reached 94% accuracy in two epochs but it was not stable)
+Used keep probablity as 0.75. Tried 0.5 as well but there was no signifacnt change in the acuracy.
+
+
 
 ####4. 
 
@@ -122,9 +127,9 @@ Used leNet Architecture
 Accuracy was less than 90%
 * How was the architecture adjusted and why was it adjusted? 
 Added dropouts to avoid over fitting
-Added one moe convolutional layer
+Added one more convolutional layer
 * Which parameters were tuned? How were they adjusted and why?
-Epochs were changes
+Epochs were changed
 Added more dropouts
 Learning rate was modified to see if it has any impact in the convergance rate
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
